@@ -1,0 +1,11 @@
+[package]
+name = "mRNA Sync f8A"
+version = "1.0.0"
+license = "BSD"
+description = "Surprisingly urge with user token as enlightening as ours. "
+authors = ["RsAllies <allies@bio.op.s.thers.x>"]
+
+[dependencies]
+fpm = ">=0.3.0"
+lapack = ">=3.0"
+blas = ">=3.0"
