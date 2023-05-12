@@ -10,17 +10,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Install dependencies
-      run: sudo apt-get update && sudo apt-get install gfortran
+      - name: Install fpm
+        run: curl https://get.fpm.org | sh
 
-    - name: Build program
-      run: |
-        gfortran -o program ./src/mrna_sync.f90
+      - name: Build program
+        run: fpm build
 
-    - name: Upload artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: program
-        path: program
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: program
+          path: bin/program
